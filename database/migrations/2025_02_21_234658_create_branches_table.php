@@ -18,7 +18,7 @@ return new class extends Migration
             $table->timestamps();
 
             $table->foreign('address_id')
-            ->references('id')->on('adresses')
+            ->references('id')->on('addresses')
             ->onUpdate('cascade')->onDelete('set null');
         });
     }

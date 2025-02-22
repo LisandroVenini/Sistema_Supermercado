@@ -20,7 +20,7 @@ return new class extends Migration
 
             $table->foreign('supplier_id')
             ->references('id')->on('suppliers')
-            ->onUpdate('cascade')->onDelete('set null');
+            ->onUpdate('cascade')->onDelete('restrict');
         });
     }
 

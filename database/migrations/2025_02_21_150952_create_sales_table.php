@@ -23,15 +23,15 @@ return new class extends Migration
 
             $table->foreign('user_id')
             ->references('id')->on('users')
-            ->onUpdate('cascade')->onDelete('set null');
+            ->onUpdate('cascade')->onDelete('restrict');
 
             $table->foreign('client_id')
             ->references('id')->on('clients')
-            ->onUpdate('cascade')->onDelete('set null');
+            ->onUpdate('cascade')->onDelete('restrict');
 
             $table->foreign('branch_id')
             ->references('id')->on('branches')
-            ->onUpdate('cascade')->onDelete('set null');
+            ->onUpdate('cascade')->onDelete('restrict');
         });
     }
 

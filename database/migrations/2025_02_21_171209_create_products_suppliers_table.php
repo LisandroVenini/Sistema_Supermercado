@@ -19,11 +19,11 @@ return new class extends Migration
 
             $table->foreign('product_id')
             ->references('id')->on('products')
-            ->onUpdate('cascade')->onDelete('set null');
+            ->onUpdate('cascade')->onDelete('cascade');
 
             $table->foreign('supplier_id')
             ->references('id')->on('suppliers')
-            ->onUpdate('cascade')->onDelete('set null');
+            ->onUpdate('cascade')->onDelete('cascade');
         });
     }
 

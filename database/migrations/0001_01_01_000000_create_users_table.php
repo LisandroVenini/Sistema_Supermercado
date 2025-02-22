@@ -16,7 +16,7 @@ return new class extends Migration
             $table->integer('dni')->unique();
             $table->string('name');
             $table->string('last_name');
-            $table->integer('phone_number')->nullable();
+            $table->string('phone_number')->nullable();
             $table->string('email');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
@@ -26,7 +26,7 @@ return new class extends Migration
 
             $table->foreign('role_id')
             ->references('id')->on('roles')
-            ->onUpdate('cascade')->onDelete('set null');
+            ->onUpdate('cascade')->onDelete('restrict');
         });
 
         Schema::create('password_reset_tokens', function (Blueprint $table) {
