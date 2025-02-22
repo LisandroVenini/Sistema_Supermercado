@@ -16,6 +16,14 @@ return new class extends Migration
             $table->unsignedBigInteger('product_id');
             $table->unsignedBigInteger('supplier_id');
             $table->timestamps();
+
+            $table->foreign('product_id')
+            ->references('id')->on('products')
+            ->onUpdate('cascade')->onDelete('set null');
+
+            $table->foreign('supplier_id')
+            ->references('id')->on('suppliers')
+            ->onUpdate('cascade')->onDelete('set null');
         });
     }
 

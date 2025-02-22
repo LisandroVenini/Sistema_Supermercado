@@ -16,7 +16,12 @@ return new class extends Migration
             $table->string('name');
             $table->string('email');
             $table->integer('phone_number');
+            $table->unsignedBigInteger('address_id');
             $table->timestamps();
+
+            $table->foreign('address_id')
+            ->references('id')->on('addresses')
+            ->onUpdate('cascade')->onDelete('set null');
         });
     }
 

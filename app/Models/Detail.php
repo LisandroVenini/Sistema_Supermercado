@@ -3,15 +3,13 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\MorphTo;
 
 class Detail extends Model
 {
-    protected $fillable = [
-        'detailable_id',
-        'detailable_type',
-        'product_id',
-        'quantity',
-        'unit_price',
-        'subtotal'
-    ];
+    protected $guarded = [];
+
+    public function detailable() : MorphTo {
+        return $this->morphTo();
+    }
 }
